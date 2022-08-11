@@ -1,0 +1,39 @@
+public class validateBST{
+
+    static class Node{
+        Node left;
+        Node right;
+        int data;
+        Node(int data){
+            this.data = data;
+            this.left = this.right = null;
+        }
+    }
+
+    // a binary search tree is proper bst if it has the left subtree less then root and right subtree greater then root.
+
+    public static boolean isBst(Node root){
+        return solver(root, Integer.MAX_VALUE , Integer.MIN_VALUE);
+    }
+    public static boolean solver(Node root, int min , int max){
+
+        if(root==null) return true;
+
+      
+        // if it is wrong...
+        // i mean it violates the bst condition.
+
+        if(root.data<=min && root.data >=max){
+            return false;
+        }
+
+        else
+        return solver(root.left , min, root.data) && solver(root.right , root.data , max);
+
+
+
+    }
+
+
+
+}
