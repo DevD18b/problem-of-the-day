@@ -26,7 +26,7 @@ public class maxRefuelingToReachTheTarget {
 
         int n = stations.length;
          
-        PriorityQueue<Integer[]> pq = new PriorityQueue<>((a,b)->b[1]-a[1];)
+        PriorityQueue<int []> pq = new PriorityQueue<>((a,b)->b[1]-a[1]);
 
 
 
@@ -38,7 +38,7 @@ public class maxRefuelingToReachTheTarget {
 
         while(distance<target){
             while(i<n && distance >= stations[i][0]){
-                pq.add(stations[i]);
+                pq.offer(stations[i]);
                 i++;
             }
             if(pq.isEmpty()) return -1;
@@ -47,7 +47,7 @@ public class maxRefuelingToReachTheTarget {
         }
 
 
-return -1;
+return refill;
 
 
     }
